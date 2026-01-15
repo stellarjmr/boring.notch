@@ -437,6 +437,11 @@ struct ContentView: View {
                         }
                     }
                 )
+                .overlay {
+                    if Defaults[.enableClosedNotchLyrics] {
+                        ClosedNotchLyricsView()
+                    }
+                }
                 .frame(
                     width: (coordinator.expandingView.show
                         && coordinator.expandingView.type == .music
